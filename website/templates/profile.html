@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+      <style>
+        body {
+        background: linear-gradient(to bottom, #33ccff 0%, #ccffcc 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+         }
+      </style>
+    </head>
+    <body>
+<h3 align="center">Bilgiler</h3>
+<div>
+    <p>Email : {{user['email']}}</p>
+    <p>İsim : {{user['first_name']}}</p>
+    <p>Ilgi Alanlari : {{user['ilgi_Alani']}}</p>
+</div>
+
+<form method='POST'>
+  <h3 align="center">Bilgi Değiştirmek Icin</h3>
+  <div class="form-group">
+    <label for="firstName">İsim</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="İsim giriniz"
+    />
+  </div>
+   <div class="form-group">
+    <label for="ilgiAlani">ilgi Alani</label>
+    <input
+      type="text"
+      class="form-control"
+      id="ilgiAlani"
+      name="ilgiAlani"
+      placeholder="Düzenlemek için ilgi alanlari giriniz, Lütfen ',' ile ayirin."
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Degistir</button>
+</form>
+    <div>
+    <form action ="{{url_for('views.home')}}" >
+          <input
+          type = "submit"
+          value = "Ana Sayfa"
+          />
+    </form>
+    </div>
+    
+    </body>
+</html>

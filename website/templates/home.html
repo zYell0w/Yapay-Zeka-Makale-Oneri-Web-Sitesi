@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+        />
+     <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+      />
+
+      <style>
+        .home{
+    
+        }
+        body {
+        background: linear-gradient(to bottom, #33ccff 0%, #ccff99 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+         }
+        }
+         .homeButton{
+          width = 200px;
+          height: 100px;
+        }
+        .buttonsHome{
+          
+          display: flex;
+          flex-direction: row;
+          width: 400px;
+          margin-inline: auto;
+          border: 3px solid #51adc2;
+          justify-content: space-between;
+          background-color: #51adc2;
+
+          
+        }
+        .aramaCubugu{
+          width: 322px;
+        }
+      </style>
+    
+    </head>
+    <body>
+      <div class = "home">
+       <h3 align="center">Merhabalar Sayin {{user['first_name']}}</h3> <br>
+       <div class = "buttonsHome">
+       <form method="POST" action ="{{url_for('views.search', emailAdress = currentuser['email'])}}" >
+          <input class = "aramaCubugu" type="text" name="aramaCubugu" placeholder = "Bir arama yap." />
+          <input type="submit" value="Gönder" />
+        </form>
+        </div>
+
+        <div class = "buttonsHome">
+        <form action ="{{url_for('auth.logout')}}" >
+          <input
+          type = "submit"
+          value = "Cikis"
+          class = "homeButton"
+          />
+        </form>
+        <form action ="{{url_for('views.profile', emailAdress = currentuser['email'])}}" >
+          <input
+          type = "submit"
+          value = "Profil"
+          class = "homeButton"
+          />
+        </form>
+        <form action ="{{url_for('views.recommends', emailAdress = currentuser['email'])}}" >
+          <input
+          type = "submit"
+          value = "Öneriler"
+          class = "homeButton"
+          />
+        </form>
+        </div>
+        <script src="" async defer></script>
+      </div>
+    </body>
+</html>
